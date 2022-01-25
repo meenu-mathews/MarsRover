@@ -1,0 +1,19 @@
+@startuml
+class MarsRover {
+
+}
+
+class Point{
++ int x
++ int y
+
++ Point()
+}
+enum Direction {
+N
+S
+W
+E
+}
+
+@enduml
