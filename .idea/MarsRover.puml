@@ -9,7 +9,8 @@ public void position(int x, int y, String direction){
 
 }
 class Plateau{
-int[][] grid = new int[5][5];
+public void makeGrid(int xMax, int yMax)
+int[][] grid = new int[xMax][yMax];
 }
 
 @enduml
