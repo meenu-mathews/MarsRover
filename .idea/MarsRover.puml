@@ -1,19 +1,15 @@
 @startuml
+
+class NavigationControl{
+public void navigateRover(String leftRight, int moveForward)
+}
 class MarsRover {
+public void position(int x, int y, String direction){
+
 
 }
-
-class Point{
-+ int x
-+ int y
-
-+ Point()
-}
-enum Direction {
-N
-S
-W
-E
+class Plateau{
+int[][] grid = new int[5][5];
 }
 
 @enduml
