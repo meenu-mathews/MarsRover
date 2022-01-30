@@ -5,8 +5,6 @@ public void navigateRover(String leftRight, int moveForward)
 }
 class MarsRover {
 public void position(int x, int y, String direction){
-
-
 }
 class Plateau{
 public void makeGrid(int xMax, int yMax)
