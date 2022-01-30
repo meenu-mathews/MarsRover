@@ -26,8 +26,16 @@ public class Plateau {
         for(int i = 0; i<roverMove.length(); i++) {
 
             char instruction = roverMove.toUpperCase(Locale.ROOT).charAt(i);
-            if(instruction == 'L')
-            System.out.print(instruction + ", ");
+            if(instruction == 'L'){
+//                Spins the Rover 90 degrees Left without moving from the current coordinate point
+            }
+            else if(instruction == 'R'){
+//                Spins the Rover 90 degrees Right without moving from the current coordinate point
+            }
+            else if(instruction == 'M'){
+//                Moves the Rover forward by one grid point
+            }
+
         }
     }
 }
