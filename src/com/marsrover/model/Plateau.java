@@ -15,32 +15,34 @@ public class Plateau {
         Scanner scannerObj = new Scanner(System.in);
         int xCoordRover = scannerObj.nextInt();
         int yCoordRover = scannerObj.nextInt();
-        char directionRover = scannerObj.next(".").charAt(0);
+        char directionRover = Character.toUpperCase(scannerObj.next(".").charAt(0));
         grid[xCoordRover][yCoordRover] = "Rover present";
 
         System.out.println(grid[xCoordRover][yCoordRover] + " at ["+xCoordRover+"]["+yCoordRover+"] facing "+directionRover);
 
         System.out.println("Enter instructions (L,R,M) to move the Rover around the Plateau ");
-        String roverMoveInstruction = scannerObj.nextLine();
+        String roverMoveInstruction = scannerObj.next();
 
         for(int i = 0; i<roverMoveInstruction.length(); i++) {
 
             char instruction = roverMoveInstruction.toUpperCase(Locale.ROOT).charAt(i);
+            System.out.println("Instruction #"+i+": "+ instruction);
             if(instruction == 'L'){
 //                Spins the Rover 90 degrees Left without moving from the current coordinate point
                 if (directionRover == 'N') {
                     directionRover = 'W';
                 }
-                if (directionRover == 'S') {
+                else if (directionRover == 'S') {
                     directionRover = 'E';
                 }
-                if (directionRover == 'W') {
+                else if (directionRover == 'W') {
                     directionRover = 'S';
                 }
-                if (directionRover == 'E') {
+                else if (directionRover == 'E') {
                     directionRover = 'N';
                 }
 
+                System.out.println("Direction of rover now updated to "+ directionRover);
             }
             else if(instruction == 'R'){
 //                Spins the Rover 90 degrees Right without moving from the current coordinate point
@@ -56,6 +58,7 @@ public class Plateau {
                 if (directionRover == 'E') {
                     directionRover = 'S';
                 }
+                System.out.println("Direction of rover now updated to "+ directionRover);
             }
             else if(instruction == 'M') {
 //                Moves the Rover forward by one grid point
@@ -73,6 +76,7 @@ public class Plateau {
                         xCoordRover++;
                     }
                 }
+                System.out.println("Position of rover now updated to "+ xCoordRover+","+yCoordRover);
             }
 
         }
