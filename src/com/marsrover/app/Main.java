@@ -8,14 +8,12 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-//        marsRoverTestObj.checkOutput();
-//        MarsRoverTest marsRoverTestObj = new MarsRoverTest();
 
-
-        Plateau plateauObj = new Plateau();
+        Plateau plateauObj = new Plateau("grid");
         plateauObj.makePlateau();
-        MarsRover marsRoverObj = new MarsRover();
+        MarsRover marsRoverObj = new MarsRover("rover");
         marsRoverObj.getRoverDetails();
+        marsRoverObj.moveRover();
     }
 }
 

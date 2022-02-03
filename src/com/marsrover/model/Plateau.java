@@ -5,8 +5,11 @@ import java.util.Scanner;
 
 public class Plateau extends Coordinates{
 
+    public Plateau(String item) {
+        super(item);
+    }
+
     public void makePlateau() {
-       // Coordinates plateauCoordinatesObj = new Coordinates();
         String[][] grid = new String[xCoord][yCoord];
         System.out.println("[" + xCoord + "][" + yCoord + "] grid created");
     }

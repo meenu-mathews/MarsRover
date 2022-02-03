@@ -1,72 +1,82 @@
 package com.marsrover.model;
-
 import java.util.Locale;
 import java.util.Scanner;
 
+
 public class MarsRover extends Coordinates {
 
+    Scanner scannerObj = new Scanner(System.in);
+    String directionRover;
+    char instruction;
+
+    public MarsRover(String item) {
+        super(item);
+    }
     public void getRoverDetails() {
-        System.out.println("Enter rover details and direction (N,S,W,E)");
-        Coordinates roverCoordinatesObj = new Coordinates();
-        Scanner scannerObj = new Scanner(System.in);
-        char directionRover = Character.toUpperCase(scannerObj.next(".").charAt(0));
+        System.out.println("Enter rover direction (N,S,W,E)");
+         directionRover = String.valueOf(scannerObj.next().charAt(0)).toUpperCase(Locale.ROOT);
 
+        if (DirectionEnum.contains(directionRover)) {
+            System.out.println("Rover at [" + xCoord + "][" + yCoord + "] facing " + directionRover);
+        } else
+            System.out.println("Invalid input");
+    }
+        public void moveRover(){
+            System.out.println("Enter instructions (L,R,M) to move the Rover around the Plateau ");
+            String roverMoveInstruction = scannerObj.next();
 
-        System.out.println("Rover at [" + xCoord + "][" + yCoord + "] facing " + directionRover);
+            for (int i = 0; i < roverMoveInstruction.length(); i++) {
 
-        System.out.println("Enter instructions (L,R,M) to move the Rover around the Plateau ");
-        String roverMoveInstruction = scannerObj.next();
-
-        for (int i = 0; i < roverMoveInstruction.length(); i++) {
-
-            char instruction = roverMoveInstruction.toUpperCase(Locale.ROOT).charAt(i);
-            if (instruction == 'L') {
+                instruction = roverMoveInstruction.toUpperCase(Locale.ROOT).charAt(i);
+                System.out.println(instruction);
+                if(InstructionsEnum.contains(String.valueOf(instruction))){
+                if ((String.valueOf(instruction)).equals(InstructionsEnum.L.name())) {
 //                Spins the Rover 90 degrees Left without moving from the current coordinate point
-                if (directionRover == 'N') {
-                    directionRover = 'W';
-                } else if (directionRover == 'S') {
-                    directionRover = 'E';
-                } else if (directionRover == 'W') {
-                    directionRover = 'S';
-                } else if (directionRover == 'E') {
-                    directionRover = 'N';
-                }
-            } else if (instruction == 'R') {
+                    if (directionRover.equals(DirectionEnum.N.name())) {
+                        directionRover = "W";
+                    } else if (directionRover.equals(DirectionEnum.S.name())) {
+                        directionRover = DirectionEnum.E.name();
+                    } else if (directionRover.equals(DirectionEnum.W.name())) {
+                        directionRover = DirectionEnum.S.name();
+                    } else if (directionRover.equals(DirectionEnum.E.name())) {
+                        directionRover = DirectionEnum.N.name();
+                    }
+                } else if ((String.valueOf(instruction)).equals(InstructionsEnum.R.name())){
 //                Spins the Rover 90 degrees Right without moving from the current coordinate point
-                if (directionRover == 'N') {
-                    directionRover = 'E';
-                }
-                if (directionRover == 'S') {
-                    directionRover = 'W';
-                }
-                if (directionRover == 'W') {
-                    directionRover = 'N';
-                }
-                if (directionRover == 'E') {
-                    directionRover = 'S';
-                }
-            } else if (instruction == 'M') {
+                    if (directionRover.equals(DirectionEnum.N.name())) {
+                        directionRover = DirectionEnum.E.name();
+                    }
+                    if (directionRover.equals(DirectionEnum.S.name())) {
+                        directionRover = DirectionEnum.W.name();
+                    }
+                    if (directionRover.equals(DirectionEnum.W.name())) {
+                        directionRover = DirectionEnum.N.name();
+                    }
+                    if (directionRover.equals(DirectionEnum.E.name())) {
+                        directionRover = DirectionEnum.S.name();
+                    }
+                } else if ((String.valueOf(instruction)).equals(InstructionsEnum.M.name())){
 //                Moves the Rover forward by one grid point
-                if (yCoord != yCoord || xCoord != xCoord) {
-                    if (directionRover == 'N') {
-                        yCoord++;
-                    }
-                    if (directionRover == 'S') {
-                        yCoord--;
-                    }
-                    if (directionRover == 'W') {
-                        xCoord--;
-                    }
-                    if (directionRover == 'E') {
-                        xCoord++;
+                    if (yCoord != yCoord || xCoord != xCoord) {
+                        if (directionRover.equals(DirectionEnum.N.name()))
+                            yCoord++;
+                        if (directionRover.equals(DirectionEnum.S.name()))
+                            yCoord--;
+
+                        if (directionRover.equals(DirectionEnum.W.name()))
+                            xCoord--;
+
+                        if (directionRover.equals(DirectionEnum.E.name()))
+                            xCoord++;
+
                     }
                 }
+                } else System.out.println("Invalid Input");
+
             }
-            else System.out.println("Invalid Input");
-
+            System.out.println("Rover at [" + xCoord + "][" + yCoord + "] facing " + directionRover);
         }
-        System.out.println("Position of rover " + xCoord + "," + yCoord + " facing " + directionRover);
-
 
     }
-}
+
+
