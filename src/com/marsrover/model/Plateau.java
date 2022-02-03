@@ -28,15 +28,38 @@ public class Plateau {
             char instruction = roverMoveInstruction.toUpperCase(Locale.ROOT).charAt(i);
             if(instruction == 'L'){
 //                Spins the Rover 90 degrees Left without moving from the current coordinate point
+                if (directionRover == 'N') {
+                    directionRover = 'W';
+                }
+                if (directionRover == 'S') {
+                    directionRover = 'E';
+                }
+                if (directionRover == 'W') {
+                    directionRover = 'S';
+                }
+                if (directionRover == 'E') {
+                    directionRover = 'N';
+                }
 
             }
             else if(instruction == 'R'){
 //                Spins the Rover 90 degrees Right without moving from the current coordinate point
             }
-            else if(instruction == 'M'){
+            else if(instruction == 'M') {
 //                Moves the Rover forward by one grid point
-                if(directionRover == 'N'){
-                    yCoordRover+1;
+                if (yCoordRover != yCoord || xCoordRover != xCoord) {
+                    if (directionRover == 'N') {
+                        yCoordRover++;
+                    }
+                    if (directionRover == 'S') {
+                        yCoordRover--;
+                    }
+                    if (directionRover == 'W') {
+                        xCoordRover--;
+                    }
+                    if (directionRover == 'E') {
+                        xCoordRover++;
+                    }
                 }
             }
 
