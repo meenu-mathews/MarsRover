@@ -44,6 +44,18 @@ public class Plateau {
             }
             else if(instruction == 'R'){
 //                Spins the Rover 90 degrees Right without moving from the current coordinate point
+                if (directionRover == 'N') {
+                    directionRover = 'E';
+                }
+                if (directionRover == 'S') {
+                    directionRover = 'W';
+                }
+                if (directionRover == 'W') {
+                    directionRover = 'N';
+                }
+                if (directionRover == 'E') {
+                    directionRover = 'S';
+                }
             }
             else if(instruction == 'M') {
 //                Moves the Rover forward by one grid point
