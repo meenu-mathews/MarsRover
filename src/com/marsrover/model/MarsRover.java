@@ -33,7 +33,7 @@ public class MarsRover extends Coordinates {
                 if ((String.valueOf(instruction)).equals(InstructionsEnum.L.name())) {
 //                Spins the Rover 90 degrees Left without moving from the current coordinate point
                     if (directionRover.equals(DirectionEnum.N.name())) {
-                        directionRover = "W";
+                        directionRover = String.valueOf(DirectionEnum.W.name());
                     } else if (directionRover.equals(DirectionEnum.S.name())) {
                         directionRover = DirectionEnum.E.name();
                     } else if (directionRover.equals(DirectionEnum.W.name())) {
