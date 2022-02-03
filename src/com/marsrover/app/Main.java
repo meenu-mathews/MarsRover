@@ -11,7 +11,8 @@ public class Main {
         System.out.println("Enter max coordinates of plateau");
         int xCoord = scannerObj.nextInt();
         int yCoord = scannerObj.nextInt();
-        Plateau plateauObj = new Plateau(xCoord,yCoord);
+        Plateau plateauObj = new Plateau();
+        plateauObj.createGrid(xCoord,yCoord);
 
 
 

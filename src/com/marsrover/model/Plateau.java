@@ -21,19 +21,23 @@ public class Plateau {
         System.out.println(grid[xCoordRover][yCoordRover] + " at ["+xCoordRover+"]["+yCoordRover+"] facing "+directionRover);
 
         System.out.println("Enter instructions (L,R,M) to move the Rover around the Plateau ");
-        String roverMove = scannerObj.nextLine();
-        
-        for(int i = 0; i<roverMove.length(); i++) {
+        String roverMoveInstruction = scannerObj.nextLine();
 
-            char instruction = roverMove.toUpperCase(Locale.ROOT).charAt(i);
+        for(int i = 0; i<roverMoveInstruction.length(); i++) {
+
+            char instruction = roverMoveInstruction.toUpperCase(Locale.ROOT).charAt(i);
             if(instruction == 'L'){
 //                Spins the Rover 90 degrees Left without moving from the current coordinate point
+
             }
             else if(instruction == 'R'){
 //                Spins the Rover 90 degrees Right without moving from the current coordinate point
             }
             else if(instruction == 'M'){
 //                Moves the Rover forward by one grid point
+                if(directionRover == 'N'){
+                    yCoordRover+1;
+                }
             }
 
         }
