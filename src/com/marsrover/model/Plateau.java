@@ -4,9 +4,21 @@ import java.util.Locale;
 import java.util.Scanner;
 
 public class Plateau {
+    int xCoord = 0;
+    int yCoord = 0;
 
+    public int getxCoord() {
+        return xCoord;
+    }
 
-    public Plateau(int xCoord, int yCoord) {
+    public int getyCoord() {
+        return yCoord;
+    }
+    public void setCoordinates(int xCoord, int yCoord) {
+        this.xCoord = xCoord;
+        this.yCoord = yCoord;
+    }
+    public void makePlateau() {
 
         String[][] grid = new String[xCoord][yCoord];
         System.out.println("["+xCoord+"]["+yCoord+"] grid created");
@@ -26,7 +38,6 @@ public class Plateau {
         for(int i = 0; i<roverMoveInstruction.length(); i++) {
 
             char instruction = roverMoveInstruction.toUpperCase(Locale.ROOT).charAt(i);
-            System.out.println("Instruction #"+i+": "+ instruction);
             if(instruction == 'L'){
 //                Spins the Rover 90 degrees Left without moving from the current coordinate point
                 if (directionRover == 'N') {
@@ -41,8 +52,6 @@ public class Plateau {
                 else if (directionRover == 'E') {
                     directionRover = 'N';
                 }
-
-                System.out.println("Direction of rover now updated to "+ directionRover);
             }
             else if(instruction == 'R'){
 //                Spins the Rover 90 degrees Right without moving from the current coordinate point
@@ -58,7 +67,6 @@ public class Plateau {
                 if (directionRover == 'E') {
                     directionRover = 'S';
                 }
-                System.out.println("Direction of rover now updated to "+ directionRover);
             }
             else if(instruction == 'M') {
 //                Moves the Rover forward by one grid point
@@ -76,9 +84,9 @@ public class Plateau {
                         xCoordRover++;
                     }
                 }
-                System.out.println("Position of rover now updated to "+ xCoordRover+","+yCoordRover);
             }
 
         }
+        System.out.println("Position of rover "+ xCoordRover+","+yCoordRover+" facing "+directionRover);
     }
 }
