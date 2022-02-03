@@ -4,22 +4,10 @@ import java.util.Locale;
 import java.util.Scanner;
 
 public class Plateau {
-    int xCoord = 0;
-    int yCoord = 0;
 
-    public int getxCoord() {
-        return xCoord;
-    }
 
-    public int getyCoord() {
-        return yCoord;
-    }
-    public void setCoordinates(int xCoord, int yCoord) {
-        this.xCoord = xCoord;
-        this.yCoord = yCoord;
-    }
-    public void makePlateau() {
-
+    public void makePlateau(int xCoord, int yCoord) {
+        Coordinates coordinatesObj = new Coordinates(xCoord,yCoord);
         String[][] grid = new String[xCoord][yCoord];
         System.out.println("["+xCoord+"]["+yCoord+"] grid created");
 

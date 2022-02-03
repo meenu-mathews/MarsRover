@@ -16,7 +16,7 @@ public class Main {
         int xCoord = scannerObj.nextInt();
         int yCoord = scannerObj.nextInt();
         Plateau plateauObj = new Plateau();
-        plateauObj.setCoordinates(xCoord,yCoord);
+        plateauObj.makePlateau(xCoord,yCoord);
     }
 }
 
