@@ -1,11 +1,16 @@
 package com.marsrover.model;
 
-public class Coordinates {
-    int xCoord = 0;
-    int yCoord = 0;
+import java.util.Scanner;
 
-    public Coordinates(int xCoord, int yCoord) {
-        this.xCoord = xCoord;
-        this.yCoord = yCoord;
+public class Coordinates {
+
+    int xCoord;
+    int yCoord;
+
+    public Coordinates() {
+        Scanner scannerObj = new Scanner(System.in);
+        System.out.println("Enter coordinates");
+        xCoord = scannerObj.nextInt();
+        yCoord = scannerObj.nextInt();
     }
 }
