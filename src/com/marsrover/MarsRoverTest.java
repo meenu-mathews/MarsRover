@@ -10,7 +10,7 @@ public class MarsRoverTest {
 
 @Test
 public void checkOutput(){
-//  System.out.println(marsRoverObj.moveRover(plateauObj.getxCoord(),plateauObj.getyCoord()));
+   //  System.out.println(marsRoverObj.moveRover(plateauObj.getxCoord(),plateauObj.getyCoord()));
   // assertEquals(marsRoverObj.moveRover(plateauObj.getxCoord(),plateauObj.getyCoord()),"1 3 N");
 }
 }
