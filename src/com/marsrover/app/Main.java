@@ -9,11 +9,16 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Plateau plateauObj = new Plateau("grid");
+        Plateau plateauObj = new Plateau();
         plateauObj.makePlateau();
-        MarsRover marsRoverObj = new MarsRover("rover");
+        MarsRover marsRoverObj = new MarsRover();
+        marsRoverObj.fetchCoordinates("rover");
         marsRoverObj.getRoverDetails();
-        marsRoverObj.moveRover();
+        marsRoverObj.moveRover(plateauObj.getxCoord(),plateauObj.getyCoord());
+        //Test called
+        MarsRoverTest marsRoverTestObj = new MarsRoverTest();
+
+        marsRoverTestObj.checkOutput();
     }
 }
 

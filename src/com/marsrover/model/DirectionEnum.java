@@ -1,16 +1,7 @@
 package com.marsrover.model;
 
 public enum DirectionEnum {
-    North("N"),
-    South ("S"),
-    West("W"),
-    East("E");
-    private String dir;
-    private DirectionEnum(String direction) {
-        this.dir = direction;
-    }
-
-
+    N,S,W,E;
 
     public static boolean contains(String test) {
 
@@ -22,10 +13,4 @@ public enum DirectionEnum {
 
         return false;
     }
-
-    @Override
-    public String toString(){
-        return dir;
-    }
 }
-
