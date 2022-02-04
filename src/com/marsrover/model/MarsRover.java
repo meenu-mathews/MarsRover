@@ -57,23 +57,34 @@ public class MarsRover extends Coordinates {
 //                Moves the Rover forward by one grid point
 
                     if (yCoord != gridY  || xCoord != gridX) {
-                        if (directionRover.equals(DirectionEnum.N.name()))
-                            yCoord++;
-                        if (directionRover.equals(DirectionEnum.S.name()))
-                            yCoord--;
 
-                        if (directionRover.equals(DirectionEnum.W.name()))
-                            xCoord--;
-
-                        if (directionRover.equals(DirectionEnum.E.name()))
-                            xCoord++;
-
+                            if (directionRover.equals(DirectionEnum.N.name())) {
+                                yCoord++;
+                                if(yCoord>gridY)
+                                    yCoord=gridY;
+                            }
+                            if (directionRover.equals(DirectionEnum.S.name())) {
+                                yCoord--;
+                                if(yCoord<0)
+                                    yCoord=0;
+                            }
+                            if (directionRover.equals(DirectionEnum.W.name())) {
+                                xCoord--;
+                                if(xCoord<0)
+                                    xCoord=0;
+                            }
+                            if (directionRover.equals(DirectionEnum.E.name())) {
+                                xCoord++;
+                                if(xCoord>gridX)
+                                    xCoord=gridX;
+                            }
+                            }
                     }
                 }
-            }
             else System.out.println("Invalid Input");
-
         }
+
+
         System.out.println("Rover at [" + xCoord + "][" + yCoord + "] facing " + directionRover);
 
         return xCoord+" "+yCoord+" "+directionRover;
